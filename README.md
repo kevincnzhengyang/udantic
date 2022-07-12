@@ -1,2 +1,6 @@
 # udantic
-generate pydantic class from user defined model in json
+Generate pydantic class from user defined model in json.
+
+
+# License
+This project is licensed under the terms of the MIT license.

@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "udantic"
+version = "0.1.0"
+description = "Generate pydantic class from user defined model in json"
+authors = ["Zheng Yang <kevin.cn.zhengyang@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+orjson = "^3.7.7"
+pydantic = "^1.9.1"
+email-validator = "^1.2.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

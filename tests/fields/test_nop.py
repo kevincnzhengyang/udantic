@@ -2,12 +2,13 @@
 Author: kevin.z.y <kevin.cn.zhengyang@gmail.com>
 Date: 2022-07-18 10:16:03
 LastEditors: kevin.z.y
-LastEditTime: 2022-07-18 10:52:07
+* @LastEditTime: 2022-08-01 10:54:02
 FilePath: /udantic/tests/fields/test_nop.py
 Description:
 
 Copyright (c) 2022 by Zheng, Yang, All Rights Reserved.
 '''
+import pytest
 from udantic.fields.nop import FieldNameOfPerson
 from pydantic import BaseModel
 
@@ -41,3 +42,9 @@ def test_validation():
     assert model.name.last_name == "郑"
     assert model.name.first_name == "杨"
     assert str(model.name) == "杨 郑"
+
+
+def test_validation_fail():
+    with pytest.raises(ValueError) as e:
+        model = MyModel(name="452==46")
+    assert e.value.args[0]
